@@ -2,7 +2,6 @@
 
 ## Description
 This is a fork of twitter-node-client
-A Twitter Node Module to authenticate and interact with the Twitter REST API from NodeJS.
 
 ## Usage
 You need to create a [Twitter app](https://dev.twitter.com/apps) to use the API.
