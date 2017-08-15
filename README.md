@@ -1,20 +1,11 @@
-[![Build Status](https://travis-ci.org/BoyCook/TwitterJSClient.png?branch=master)](https://travis-ci.org/BoyCook/TwitterJSClient)
-[![Coverage Status](https://coveralls.io/repos/BoyCook/TwitterJSClient/badge.png)](https://coveralls.io/r/BoyCook/TwitterJSClient)
-[![Dependency Status](https://gemnasium.com/BoyCook/TwitterJSClient.png)](https://gemnasium.com/BoyCook/TwitterJSClient)
-[![NPM](https://nodei.co/npm/twitter-js-client.png?downloads=true)](https://nodei.co/npm/twitter-node-client) 
+
 
 ## Description
+This is a fork of twitter-node-client
 A Twitter Node Module to authenticate and interact with the Twitter REST API from NodeJS.
 
-## Installation
-```	
-npm install twitter-js-client
-```
-```javascript
-var Twitter = require('twitter-js-client').Twitter;
-```
 ## Usage
-You need to create a [Twitter app](https://dev.twitter.com/apps) to use the API. 
+You need to create a [Twitter app](https://dev.twitter.com/apps) to use the API.
 
 ```javascript
 	//Callback functions
@@ -37,34 +28,34 @@ You need to create a [Twitter app](https://dev.twitter.com/apps) to use the API.
 	}
 
     var twitter = new Twitter(config);
-	
+
 	//Example calls
 
 	twitter.getUserTimeline({ screen_name: 'BoyCook', count: '10'}, error, success);
-	
+
 	twitter.getMentionsTimeline({ count: '10'}, error, success);
-	
+
 	twitter.getHomeTimeline({ count: '10'}, error, success);
-	
+
 	twitter.getReTweetsOfMe({ count: '10'}, error, success);
-	
+
 	twitter.getTweet({ id: '1111111111'}, error, success);
 
-	
+
 	//
 	// Get 10 tweets containing the hashtag haiku
 	//
 
 	twitter.getSearch({'q':'#haiku','count': 10}, error, success);
-	
+
 	//
-	// Get 10 popular tweets with a positive attitude about a movie that is not scary 
+	// Get 10 popular tweets with a positive attitude about a movie that is not scary
 	//
 
 	twitter.getSearch({'q':' movie -scary :) since:2013-12-27', 'count': 10, 'result\_type':'popular'}, error, success);
 ```
 
-Twitter has a comprehensive [REST api](https://dev.twitter.com/rest/public) if you need to use something that doesn't have a wrapper function in the library call it directly : 
+Twitter has a comprehensive [REST api](https://dev.twitter.com/rest/public) if you need to use something that doesn't have a wrapper function in the library call it directly :
 ```javascript
 	twitter.getCustomApiCall('/statuses/lookup.json',{ id: '412312323'}, error, success);
 	twitter.postCustomApiCall('/direct_messages/new.json',{user_id: '1234', 'text':'This is easy.'}, error, success);
@@ -75,7 +66,7 @@ To get the list of expected parameters and results, check [https://dev.twitter.c
 
 ##### Search Tweets. [Docs](https://dev.twitter.com/rest/reference/get/search/tweets)
 To learn how to use Twitter Search effectively read [Using the Twitter Search API](https://dev.twitter.com/rest/public/search)
-```javascript	
+```javascript
 	twitter.getSearch(parameters, errorCallback, successCallback);
 ```
 &nbsp;
@@ -148,8 +139,8 @@ To learn how to use Twitter Search effectively read [Using the Twitter Search AP
 
 ## Tests
 
-There is a test file `TwitterITSpec.js` that does a basic integration tests of the client. 
-It uses a properties file `test/spec/properties.json` to inject in the OAuth properties. 
+There is a test file `TwitterITSpec.js` that does a basic integration tests of the client.
+It uses a properties file `test/spec/properties.json` to inject in the OAuth properties.
 These will need to be updated with your own details before the tests will run
 
 ## Running tests
